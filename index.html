@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Lower Limb 1: Comprehensive Anatomy Quiz</title>
+    <style>
+        /* Same CSS framework as previous quiz */
+        :root {
+            --primary: #2c5282;
+            --secondary: #3182ce;
+            --accent: #63b3ed;
+            --light: #ebf8ff;
+            --dark: #1a365d;
+            --success: #38a169;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+            --anterior-thigh-color: #e53e3e;
+            --medial-thigh-color: #9f7aea;
+            --posterior-thigh-color: #48bb78;
+            --saphenous-color: #d69e2e;
+            --gluteal-color: #4299e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(44, 82, 130, 0.85), rgba(44, 82, 130, 0.9)), 
+                        url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+            color: #2d3748;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), var(--anterior-thigh-color));
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .limb-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.2;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .difficulty-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--anterior-thigh-color), var(--gluteal-color));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            margin-top: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .quiz-info {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .info-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .quiz-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .questions-section {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .answer-section {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            display: none;
+            max-height: 85vh;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .answer-section.visible {
+            display: block;
+        }
+        
+        .question {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-left: 5px;
+        }
+        
+        .question-number::before {
+            content: "Q";
+            background: linear-gradient(135deg, var(--primary), var(--anterior-thigh-color));
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .question-text {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            background: linear-gradient(to right, var(--light), #f7fafc);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .anterior-note {
+            background: linear-gradient(to right, #fff5f5, #fed7d7);
+            border-left: 5px solid var(--anterior-thigh-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .medial-note {
+            background: linear-gradient(to right, #faf5ff, #e9d8fd);
+            border-left: 5px solid var(--medial-thigh-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .posterior-note {
+            background: linear-gradient(to right, #f0fff4, #c6f6d5);
+            border-left: 5px solid var(--posterior-thigh-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .saphenous-note {
+            background: linear-gradient(to right, #fffaf0, #feebc8);
+            border-left: 5px solid var(--saphenous-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .gluteal-note {
+            background: linear-gradient(to right, #e6f7ff, #b3e0ff);
+            border-left: 5px solid var(--gluteal-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .clinical-note {
+            background: linear-gradient(to right, #edf2f7, #cbd5e0);
+            border-left: 5px solid var(--secondary);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-style: italic;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .option {
+            padding: 18px 25px;
+            border: 2px solid #cbd5e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.08rem;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option::before {
+            content: attr(data-letter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            background: #edf2f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--dark);
+            border-right: 2px solid #cbd5e0;
+        }
+        
+        .option-content {
+            margin-left: 45px;
+        }
+        
+        .option:hover {
+            background-color: #f7fafc;
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .option.selected {
+            background-color: #e6fffa;
+            border-color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.15);
+        }
+        
+        .option.correct {
+            background-color: #f0fff4;
+            border-color: var(--success);
+            box-shadow: 0 4px 12px rgba(56, 161, 105, 0.15);
+        }
+        
+        .option.incorrect {
+            background-color: #fff5f5;
+            border-color: var(--danger);
+            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.15);
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 20px;
+        }
+        
+        button {
+            padding: 18px 35px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.15rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        button:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--anterior-thigh-color), var(--primary));
+            color: white;
+            flex: 2;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .reset-btn {
+            background: linear-gradient(135deg, #ffffff, #f7fafc);
+            color: var(--dark);
+            flex: 1;
+            border: 2px solid #cbd5e0;
+        }
+        
+        .reset-btn:hover {
+            background: white;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .results-section {
+            margin-top: 50px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            display: none;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .score-display {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--anterior-thigh-color));
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .score-display::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-20px, -20px) rotate(360deg); }
+        }
+        
+        .score-value {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            gap: 25px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            flex: 1;
+            transition: transform 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .passed .stat-value {
+            color: var(--success);
+            background: linear-gradient(135deg, var(--success), #48bb78);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .failed .stat-value {
+            color: var(--danger);
+            background: linear-gradient(135deg, var(--danger), #fc8181);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .attempted .stat-value {
+            color: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary), #4299e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .answer-bank {
+            margin-top: 50px;
+        }
+        
+        .answer-item {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+        }
+        
+        .answer-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .answer-correct {
+            color: var(--success);
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px 10px;
+            background: #f0fff4;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        
+        .answer-incorrect {
+            color: var(--danger);
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px 10px;
+            background: #fff5f5;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        
+        .support-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, var(--primary), var(--anterior-thigh-color));
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .support-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .support-link:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .share-section {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn-small {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+            justify-content: center;
+        }
+        
+        .share-twitter {
+            background: linear-gradient(135deg, #1DA1F2, #0d8bd9);
+            color: white;
+        }
+        
+        .share-facebook {
+            background: linear-gradient(135deg, #4267B2, #365899);
+            color: white;
+        }
+        
+        .share-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+        
+        .share-copy {
+            background: linear-gradient(135deg, var(--anterior-thigh-color), var(--primary));
+            color: white;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            margin: 25px 0;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--anterior-thigh-color), var(--primary));
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @media (max-width: 1200px) {
+            .quiz-container {
+                flex-direction: column;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn-small {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .score-value {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+            
+            button {
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .score-value {
+                font-size: 2.5rem;
+            }
+            
+            .question-text {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+            
+            .option {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="limb-icon">🦵</div>
+            <h1>Introduction to Lower Limb 1: Comprehensive Anatomy Quiz</h1>
+            <p class="subtitle">60 Detailed Questions on Front of Thigh, Medial Thigh, Back of Thigh, Great Saphenous Vein & Artery, and Gluteal Region</p>
+            <div class="difficulty-badge">COMPREHENSIVE LOWER LIMB ANATOMY</div>
+        </header>
+        
+        <div class="quiz-info">
+            <div class="info-item">
+                <div class="info-value">60</div>
+                <div class="info-label">Questions</div>
+            </div>
+            <div class="info-item">
+                <div class="info-value">Anterior</div>
+                <div class="info-label">Thigh</div>
+            </div>
+            <div class="info-item">
+                <div class="info-value">Medial</div>
+                <div class="info-label">Thigh</div>
+            </div>
+            <div class="info-item">
+                <div class="info-value">Gluteal</div>
+                <div class="info-label">Region</div>
+            </div>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar" style="width: 0%"></div>
+        </div>
+        
+        <div class="quiz-container">
+            <div class="questions-section" id="questions-section">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+            
+            <div class="answer-section" id="answer-section">
+                <h2>Comprehensive Answer Bank</h2>
+                <p>Detailed explanations based on Vishram Singh Anatomy & Gray's Anatomy</p>
+                <div id="answer-bank">
+                    <!-- Answers will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="reset-btn" id="reset-btn">Reset Quiz</button>
+            <button class="submit-btn" id="submit-btn">Submit Answers</button>
+        </div>
+        
+        <div class="results-section" id="results-section">
+            <div class="score-display">
+                <h2>Your Lower Limb Anatomy Score</h2>
+                <div class="score-value" id="score-value">0/60</div>
+                <p>Front of Thigh, Medial Thigh, Back of Thigh, Saphenous System & Gluteal Region</p>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-box attempted">
+                    <div class="stat-value" id="attempted-value">0</div>
+                    <div class="stat-label">Questions Attempted</div>
+                </div>
+                <div class="stat-box passed">
+                    <div class="stat-value" id="passed-value">0</div>
+                    <div class="stat-label">Questions Passed</div>
+                </div>
+                <div class="stat-box failed">
+                    <div class="stat-value" id="failed-value">0</div>
+                    <div class="stat-label">Questions Failed</div>
+                </div>
+            </div>
+            
+            <div class="share-section">
+                <h3>Share Your Lower Limb Anatomy Results</h3>
+                <div class="share-buttons">
+                    <button class="share-btn-small share-twitter" id="share-twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                        Twitter
+                    </button>
+                    <button class="share-btn-small share-facebook" id="share-facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                        Facebook
+                    </button>
+                    <button class="share-btn-small share-whatsapp" id="share-whatsapp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.017 2.047c-2.724 0-5.443 1.042-7.513 3.112-4.163 4.163-4.163 10.92 0 15.083 2.07 2.07 4.789 3.112 7.513 3.112s5.443-1.042 7.513-3.112c4.163 4.163 4.163 10.92 0 15.083-2.07 2.07-4.789 3.112-7.513 3.112zm-3.017 15.953l-1.516-1.516 3.035-3.035-3.035-3.035 1.516-1.516 3.035 3.035 3.035-3.035 1.516 1.516-3.035 3.035 3.035 3.035-1.516 1.516-3.035-3.035-3.035 3.035z"/>
+                        </svg>
+                        WhatsApp
+                    </button>
+                    <button class="share-btn-small share-copy" id="share-copy">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 1h-12c-1.1 0-2 .9-2 2v14h2v-14h12v-2zm3 4h-11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2v-14c0-1.1-.9-2-2-2zm0 16h-11v-14h11v14z"/>
+                        </svg>
+                        Copy Results
+                    </button>
+                </div>
+            </div>
+            
+            <div class="answer-bank">
+                <h3>Detailed Explanations Based on Vishram Singh Anatomy & Gray's Anatomy</h3>
+                <div id="detailed-answers">
+                    <!-- Detailed answers will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="support-section">
+            <h3>Follow Code God for More Medical Quizzes</h3>
+            <a href="https://www.tiktok.com/@code.god3?_r=1&_d=ZS-91SF7FxgGKu" target="_blank" class="support-link">Follow on TikTok</a>
+        </div>
+    </div>
+
+    <script>
+        // 60 Comprehensive questions on Lower Limb Anatomy
+        // Questions 1-12: Front of Thigh - Answer A
+        // Questions 13-24: Medial Thigh - Answer B
+        // Questions 25-36: Back of Thigh - Answer C
+        // Questions 37-48: Great Saphenous Vein & Artery - Answer D
+        // Questions 49-60: Gluteal Region - Answer A (starting pattern again)
+        const quizData = [
+            // Questions 1-12: Front of Thigh - Answer A
+            {
+                question: "Which muscle is the primary flexor of the hip joint and also flexes the knee joint?",
+                options: [
+                    "Sartorius - longest muscle in body, flexes hip and knee",
+                    "Rectus femoris - flexes hip, extends knee",
+                    "Iliopsoas - major hip flexor, doesn't cross knee",
+                    "Gracilis - adducts thigh, flexes knee"
+                ],
+                correct: 0,
+                explanation: "Sartorius is the longest muscle, crossing both hip and knee joints. It flexes, abducts, and laterally rotates the hip, and flexes the knee (tailor's position)."
+            },
+            {
+                question: "The femoral nerve emerges from which plexus and provides innervation to which compartment?",
+                options: [
+                    "Lumbar plexus (L2-L4), anterior compartment of thigh",
+                    "Sacral plexus (L4-S3), posterior compartment of thigh",
+                    "Lumbar plexus (L2-L4), medial compartment of thigh",
+                    "Sacral plexus, gluteal region"
+                ],
+                correct: 0,
+                explanation: "Femoral nerve arises from lumbar plexus (posterior divisions of L2-L4). It innervates muscles of anterior thigh (quadriceps, sartorius, pectineus) and provides cutaneous supply to anterior thigh and medial leg."
+            },
+            {
+                question: "Which structure forms the floor of the femoral triangle?",
+                options: [
+                    "Iliopsoas laterally and pectineus medially",
+                    "Adductor longus and gracilis",
+                    "Fascia lata only",
+                    "Rectus femoris and vastus medialis"
+                ],
+                correct: 0,
+                explanation: "Floor of femoral triangle: laterally by iliopsoas, medially by pectineus. The triangle's boundaries are: inguinal ligament (superior), sartorius (lateral), adductor longus (medial)."
+            },
+            {
+                question: "The quadriceps femoris muscle inserts via the patella into which structure?",
+                options: [
+                    "Tibial tuberosity via patellar ligament",
+                    "Fibular head via lateral collateral ligament",
+                    "Medial tibial condyle via pes anserinus",
+                    "Intercondylar notch via cruciate ligaments"
+                ],
+                correct: 0,
+                explanation: "Quadriceps tendon → patella → patellar ligament → tibial tuberosity. The quadriceps (rectus femoris, vastus lateralis/medialis/intermedius) is the main knee extensor."
+            },
+            {
+                question: "Which muscle originates from the anterior superior iliac spine (ASIS)?",
+                options: [
+                    "Sartorius - from ASIS, inserts into medial tibia (pes anserinus)",
+                    "Tensor fasciae latae - from ASIS and iliac crest",
+                    "Rectus femoris - straight head from AIIS",
+                    "Both A and B are correct"
+                ],
+                correct: 3,
+                explanation: "Both sartorius and tensor fasciae latae originate from ASIS. Sartorius inserts into pes anserinus; TFL inserts into iliotibial tract."
+            },
+            {
+                question: "The femoral sheath contains all EXCEPT:",
+                options: [
+                    "Femoral nerve",
+                    "Femoral artery",
+                    "Femoral vein",
+                    "Femoral canal (with lymphatics)"
+                ],
+                correct: 0,
+                explanation: "Femoral sheath contains: femoral artery (lateral), femoral vein (intermediate), femoral canal (medial, with lymph nodes). Femoral nerve lies outside the sheath, in femoral triangle."
+            },
+            {
+                question: "Which muscle is innervated by both femoral and obturator nerves?",
+                options: [
+                    "Pectineus - dual innervation (femoral L2-L3, obturator L2-L4)",
+                    "Adductor longus - pure obturator nerve",
+                    "Rectus femoris - pure femoral nerve",
+                    "Gracilis - pure obturator nerve"
+                ],
+                correct: 0,
+                explanation: "Pectineus has variable innervation: usually femoral nerve (L2-L3), sometimes obturator nerve (L2-L4), or both. It's transitional between anterior and medial compartments."
+            },
+            {
+                question: "The 'hunter's canal' or adductor canal contains:",
+                options: [
+                    "Femoral artery, femoral vein, saphenous nerve",
+                    "Sciatic nerve and posterior femoral cutaneous nerve",
+                    "Obturator nerve and profunda femoris artery",
+                    "Superficial femoral artery only"
+                ],
+                correct: 0,
+                explanation: "Adductor canal (subsartorial canal) contains: femoral artery and vein, saphenous nerve, nerve to vastus medialis. It extends from apex of femoral triangle to adductor hiatus."
+            },
+            {
+                question: "The vastus medialis muscle is particularly important for:",
+                options: [
+                    "Medial stabilization of patella during knee extension",
+                    "Hip adduction and medial rotation",
+                    "Lateral rotation of thigh",
+                    "Knee flexion against resistance"
+                ],
+                correct: 0,
+                explanation: "Vastus medialis obliquus (VMO) fibers provide medial pull on patella, counteracting lateral pull of vastus lateralis. Crucial for proper patellar tracking."
+            },
+            {
+                question: "The femoral artery becomes the popliteal artery after passing through:",
+                options: [
+                    "Adductor hiatus in adductor magnus",
+                    "Femoral canal",
+                    "Inguinal ligament",
+                    "Obturator foramen"
+                ],
+                correct: 0,
+                explanation: "Femoral artery passes through adductor hiatus (opening in adductor magnus) to become popliteal artery in posterior knee region."
+            },
+            {
+                question: "Which statement about the rectus femoris is CORRECT?",
+                options: [
+                    "It has two heads: straight head from AIIS, reflected head from ilium above acetabulum",
+                    "It is the only quadriceps muscle crossing both hip and knee joints",
+                    "It can flex the hip and extend the knee simultaneously",
+                    "All of the above are correct"
+                ],
+                correct: 3,
+                explanation: "Rectus femoris: two-headed origin (straight from AIIS, reflected from ilium above acetabulum). Only quadriceps crossing hip (flexor) and knee (extensor)."
+            },
+            {
+                question: "The 'femoral triangle' contains which structures from lateral to medial?",
+                options: [
+                    "Femoral Nerve, Femoral Artery, Femoral Vein, Lymphatics (NAVEL)",
+                    "Femoral Artery, Femoral Vein, Femoral Nerve",
+                    "Femoral Vein, Femoral Artery, Femoral Nerve",
+                    "Lymphatics, Femoral Vein, Femoral Artery, Femoral Nerve"
+                ],
+                correct: 0,
+                explanation: "Femoral triangle contents lateral to medial: Femoral Nerve (outside sheath), Femoral Artery, Femoral Vein, Lymphatics (Empty space)/Femoral canal. Mnemonic: NAVEL."
+            },
+
+            // Questions 13-24: Medial Thigh - Answer B
+            {
+                question: "The medial compartment of thigh is primarily innervated by which nerve?",
+                options: [
+                    "Femoral nerve (L2-L4)",
+                    "Obturator nerve (L2-L4)",
+                    "Sciatic nerve (L4-S3)",
+                    "Tibial nerve (L4-S3)"
+                ],
+                correct: 1,
+                explanation: "Medial (adductor) compartment is innervated by obturator nerve (anterior divisions of L2-L4), except hamstring part of adductor magnus (tibial nerve) and pectineus (femoral nerve)."
+            },
+            {
+                question: "Which muscle is the most anterior in the medial compartment?",
+                options: [
+                    "Gracilis - most medial",
+                    "Adductor longus - forms medial boundary of femoral triangle",
+                    "Adductor brevis - deep to adductor longus",
+                    "Adductor magnus - largest and most posterior"
+                ],
+                correct: 1,
+                explanation: "Adductor longus is most anterior, forming medial boundary of femoral triangle. It's easily palpated as a cord-like structure during thigh adduction."
+            },
+            {
+                question: "The adductor magnus muscle has dual innervation because:",
+                options: [
+                    "It has adductor and hamstring parts with different embryological origins",
+                    "It develops from both anterior and posterior divisions",
+                    "Adductor part (obturator nerve), hamstring part (tibial nerve)",
+                    "All of the above are correct"
+                ],
+                correct: 3,
+                explanation: "Adductor magnus: adductor part (anterior fibers) from obturator nerve (L2-L4); hamstring part (posterior fibers, adductor hiatus) from tibial nerve (L4-S3). Different embryonic origins."
+            },
+            {
+                question: "Which muscle inserts into the pes anserinus?",
+                options: [
+                    "Sartorius, gracilis, and semitendinosus",
+                    "Adductor longus, brevis, and magnus",
+                    "Rectus femoris and vastus medialis",
+                    "Biceps femoris and semimembranosus"
+                ],
+                correct: 0,
+                explanation: "Pes anserinus ('goose's foot') on medial tibia receives: sartorius (anterior), gracilis (middle), semitendinosus (posterior). All are hip flexors/knee flexors."
+            },
+            {
+                question: "The obturator nerve passes through which structure to enter the medial thigh?",
+                options: [
+                    "Greater sciatic foramen",
+                    "Obturator foramen and canal",
+                    "Inguinal canal",
+                    "Femoral canal"
+                ],
+                correct: 1,
+                explanation: "Obturator nerve (L2-L4) passes through obturator foramen and canal to enter medial thigh, dividing into anterior and posterior branches."
+            },
+            {
+                question: "Which muscle is the longest in the medial compartment?",
+                options: [
+                    "Adductor longus - named for length, not longest",
+                    "Gracilis - longest adductor, from pubis to tibia",
+                    "Adductor magnus - largest but not longest",
+                    "Pectineus - short and flat"
+                ],
+                correct: 1,
+                explanation: "Gracilis is the longest adductor muscle, extending from pubic body to medial tibia (pes anserinus). It adducts thigh, flexes knee, and medially rotates leg."
+            },
+            {
+                question: "The 'adductor hiatus' is an opening in which muscle?",
+                options: [
+                    "Adductor longus",
+                    "Adductor brevis",
+                    "Adductor magnus (between adductor and hamstring parts)",
+                    "Gracilis"
+                ],
+                correct: 2,
+                explanation: "Adductor hiatus is an opening in adductor magnus between its adductor and hamstring parts, transmitting femoral artery/vein from anterior thigh to popliteal fossa."
+            },
+            {
+                question: "Which muscle is NOT part of the medial compartment?",
+                options: [
+                    "Obturator externus",
+                    "Adductor longus",
+                    "Gracilis",
+                    "Pectineus (transitional)"
+                ],
+                correct: 0,
+                explanation: "Obturator externus is a lateral rotator of hip, located in gluteal region (deep layer), not medial compartment. It covers outer surface of obturator membrane."
+            },
+            {
+                question: "The anterior branch of obturator nerve supplies:",
+                options: [
+                    "Adductor longus, brevis, gracilis, and sometimes pectineus",
+                    "Adductor magnus and obturator externus only",
+                    "Cutaneous sensation to medial thigh",
+                    "Both A and C are correct"
+                ],
+                correct: 3,
+                explanation: "Anterior branch of obturator nerve: motor to adductor longus, brevis, gracilis, sometimes pectineus; cutaneous to medial thigh (when present)."
+            },
+            {
+                question: "Which adductor muscle is most commonly injured in athletes (rider's strain)?",
+                options: [
+                    "Gracilis - commonly strained in soccer",
+                    "Adductor longus - most commonly injured (90% of adductor strains)",
+                    "Adductor magnus - rarely strained",
+                    "Adductor brevis - deep, protected"
+                ],
+                correct: 1,
+                explanation: "Adductor longus is most commonly strained ('rider's strain'), especially in sports requiring sudden changes of direction (soccer, hockey, football)."
+            },
+            {
+                question: "The 'pectineus' muscle is considered transitional because it:",
+                options: [
+                    "Has features of both anterior and medial compartments",
+                    "Is innervated by both femoral and obturator nerves",
+                    "Flexes and adducts the thigh",
+                    "All of the above are correct"
+                ],
+                correct: 3,
+                explanation: "Pectineus: transitional between anterior (flexor) and medial (adductor) compartments. Innervation variable (femoral ± obturator). Actions: flexes and adducts thigh."
+            },
+            {
+                question: "Which muscle forms the posterior boundary of the adductor canal?",
+                options: [
+                    "Adductor longus",
+                    "Adductor magnus",
+                    "Adductor brevis",
+                    "Gracilis"
+                ],
+                correct: 1,
+                explanation: "Adductor canal boundaries: anterior - sartorius; posterior - adductor longus and magnus; lateral - vastus medialis. Adductor magnus forms floor posteriorly."
+            },
+
+            // Questions 25-36: Back of Thigh - Answer C
+            {
+                question: "The hamstring muscles all originate from which bony landmark?",
+                options: [
+                    "Ischial tuberosity (except short head of biceps femoris)",
+                    "Lesser trochanter of femur",
+                    "Posterior superior iliac spine",
+                    "Sacrotuberous ligament"
+                ],
+                correct: 0,
+                explanation: "True hamstrings (semimembranosus, semitendinosus, long head of biceps femoris) originate from ischial tuberosity. Short head of biceps femoris from linea aspera."
+            },
+            {
+                question: "Which nerve innervates all hamstring muscles?",
+                options: [
+                    "Common fibular (peroneal) nerve",
+                    "Tibial division of sciatic nerve (L4-S3)",
+                    "Superior gluteal nerve",
+                    "Obturator nerve"
+                ],
+                correct: 1,
+                explanation: "All hamstrings innervated by tibial nerve (L4-S3) except short head of biceps femoris (common fibular nerve). Sciatic nerve divides into tibial and common fibular nerves."
+            },
+            {
+                question: "The sciatic nerve typically exits the pelvis through:",
+                options: [
+                    "Greater sciatic foramen inferior to piriformis",
+                    "Lesser sciatic foramen",
+                    "Obturator foramen",
+                    "Greater sciatic foramen superior to piriformis"
+                ],
+                correct: 0,
+                explanation: "Sciatic nerve (L4-S3) exits pelvis via greater sciatic foramen inferior to piriformis muscle. Variations exist (nerve piercing piriformis or passing superior)."
+            },
+            {
+                question: "Which hamstring muscle inserts into the fibular head?",
+                options: [
+                    "Semitendinosus - inserts into pes anserinus",
+                    "Semimembranosus - inserts into medial tibia",
+                    "Biceps femoris - inserts into fibular head",
+                    "Gracilis - inserts into pes anserinus"
+                ],
+                correct: 2,
+                explanation: "Biceps femoris inserts into fibular head (main insertion) and lateral tibial condyle. It laterally rotates leg when knee is flexed."
+            },
+            {
+                question: "The 'hamstring part' of adductor magnus is innervated by:",
+                options: [
+                    "Obturator nerve",
+                    "Tibial nerve (sciatic)",
+                    "Femoral nerve",
+                    "Common fibular nerve"
+                ],
+                correct: 1,
+                explanation: "Adductor magnus has dual innervation: adductor part (obturator nerve), hamstring part (tibial nerve). Hamstring part is functionally similar to hamstrings."
+            },
+            {
+                question: "Which muscle is most medial in the posterior thigh?",
+                options: [
+                    "Biceps femoris - most lateral",
+                    "Semimembranosus - deep to semitendinosus",
+                    "Semitendinosus - superficial and medial",
+                    "Adductor magnus - technically medial compartment"
+                ],
+                correct: 1,
+                explanation: "Semimembranosus is most medial, deep to semitendinosus. It inserts into medial tibial condyle (posterior) with expansions to form oblique popliteal ligament."
+            },
+            {
+                question: "The sciatic nerve typically divides into tibial and common fibular nerves at:",
+                options: [
+                    "Pelvic inlet",
+                    "Upper thigh",
+                    "Apex of popliteal fossa (usually)",
+                    "Below the knee"
+                ],
+                correct: 2,
+                explanation: "Sciatic nerve usually divides into tibial and common fibular nerves at apex of popliteal fossa (upper angle). Variations: division may occur higher in thigh or even within pelvis."
+            },
+            {
+                question: "Which structure is NOT found in the posterior thigh compartment?",
+                options: [
+                    "Sciatic nerve",
+                    "Posterior femoral cutaneous nerve",
+                    "Profunda femoris artery",
+                    "Perforating arteries"
+                ],
+                correct: 2,
+                explanation: "Profunda femoris artery is in anterior compartment, giving perforating branches to posterior thigh. Posterior thigh contains sciatic nerve, posterior cutaneous nerve, and perforating arteries."
+            },
+            {
+                question: "The 'semimembranosus' muscle gets its name from:",
+                options: [
+                    "Its flat, membranous proximal tendon",
+                    "Its long, tendinous distal insertion",
+                    "Being half membrane, half muscle",
+                    "Its membranous expansion at insertion"
+                ],
+                correct: 0,
+                explanation: "Semimembranosus named for its flat, membranous proximal tendon of origin from ischial tuberosity. Its distal tendon is rounded and muscular."
+            },
+            {
+                question: "Which muscle is responsible for 'unlocking' the extended knee?",
+                options: [
+                    "All hamstrings together",
+                    "Popliteus (not a hamstring)",
+                    "Biceps femoris (lateral rotation)",
+                    "Semitendinosus (medial rotation)"
+                ],
+                correct: 1,
+                explanation: "Popliteus (in posterior knee, not thigh) unlocks extended knee by medially rotating tibia on femur. Hamstrings flex knee but don't specifically 'unlock' it."
+            },
+            {
+                question: "The blood supply to posterior thigh muscles comes primarily from:",
+                options: [
+                    "Femoral artery directly",
+                    "Profunda femoris artery via perforating branches (1st-4th)",
+                    "Popliteal artery only",
+                    "Obturator artery"
+                ],
+                correct: 1,
+                explanation: "Posterior thigh supplied by perforating branches (usually 4) of profunda femoris artery. These pierce adductor magnus to reach posterior compartment."
+            },
+            {
+                question: "Which statement about the short head of biceps femoris is CORRECT?",
+                options: [
+                    "Only hamstring not originating from ischial tuberosity",
+                    "Innervated by common fibular nerve (not tibial)",
+                    "Absent in some individuals",
+                    "All of the above are correct"
+                ],
+                correct: 3,
+                explanation: "Short head of biceps: origin from linea aspera (not ischial tuberosity); innervation by common fibular nerve; sometimes absent; considered 'atypical' hamstring."
+            },
+
+            // Questions 37-48: Great Saphenous Vein & Artery - Answer D
+            {
+                question: "The great saphenous vein begins at the:",
+                options: [
+                    "Dorsal venous arch of foot (medial end)",
+                    "Dorsal venous arch (lateral end) as small saphenous",
+                    "Popliteal vein behind knee",
+                    "Femoral vein in femoral triangle"
+                ],
+                correct: 0,
+                explanation: "Great saphenous vein begins at medial end of dorsal venous arch, ascends anterior to medial malleolus, along medial leg/thigh, drains into femoral vein via saphenous opening."
+            },
+            {
+                question: "The saphenous nerve is a branch of which larger nerve?",
+                options: [
+                    "Common fibular nerve",
+                    "Tibial nerve",
+                    "Femoral nerve (L3-L4)",
+                    "Obturator nerve"
+                ],
+                correct: 2,
+                explanation: "Saphenous nerve is terminal branch of femoral nerve (L3-L4). It accompanies great saphenous vein, providing cutaneous sensation to medial leg/foot."
+            },
+            {
+                question: "The 'saphenous opening' in fascia lata is located:",
+                options: [
+                    "3-4 cm inferolateral to pubic tubercle",
+                    "Directly over femoral artery",
+                    "In gluteal region",
+                    "Posterior to knee"
+                ],
+                correct: 0,
+                explanation: "Saphenous opening (fossa ovalis) in fascia lata: 3-4 cm inferolateral to pubic tubercle. Covered by cribriform fascia, transmits great saphenous vein and lymphatics."
+            },
+            {
+                question: "Which perforating veins connect the great saphenous vein to deep veins?",
+                options: [
+                    "Cockett's perforators (lower medial leg)",
+                    "Boyd's perforator (below knee)",
+                    "Dodd's perforator (above knee)",
+                    "All of the above are correct"
+                ],
+                correct: 3,
+                explanation: "Perforators connect superficial (saphenous) to deep veins: Cockett's (medial ankle), Boyd's (below knee), Dodd's (above knee). Valves normally prevent reflux from deep to superficial."
+            },
+            {
+                question: "The great saphenous vein is often used in coronary artery bypass grafts because:",
+                options: [
+                    "It's long, accessible, and has suitable diameter",
+                    "It's dispensable (deep veins handle venous return)",
+                    "It has fewer valves than other veins",
+                    "Both A and B are correct"
+                ],
+                correct: 3,
+                explanation: "Great saphenous vein used in CABG due to: adequate length/diameter, accessibility, dispensability (collateral venous drainage via small saphenous and perforators)."
+            },
+            {
+                question: "The 'saphenous cutdown' procedure accesses which vein at which landmark?",
+                options: [
+                    "Great saphenous vein, anterior to medial malleolus",
+                    "Small saphenous vein, posterior to lateral malleolus",
+                    "Femoral vein, below inguinal ligament",
+                    "Popliteal vein, behind knee"
+                ],
+                correct: 0,
+                explanation: "Saphenous cutdown: great saphenous vein exposed anterior to medial malleolus for emergency venous access when peripheral IV access fails."
+            },
+            {
+                question: "Which structure does NOT accompany the great saphenous vein?",
+                options: [
+                    "Saphenous nerve (above knee)",
+                    "Medial femoral cutaneous nerve",
+                    "Femoral artery",
+                    "Lymphatic vessels"
+                ],
+                correct: 2,
+                correct: 2,
+                explanation: "Femoral artery runs in femoral triangle/adductor canal, not with saphenous vein. Saphenous nerve accompanies vein above knee; lymphatics follow vein to superficial inguinal nodes."
+            },
+            {
+                question: "Varicose veins commonly affect the great saphenous system due to:",
+                options: [
+                    "Valve incompetence at saphenofemoral junction",
+                    "High hydrostatic pressure in standing position",
+                    "Weakness of vein wall and fascia",
+                    "All of the above"
+                ],
+                correct: 3,
+                explanation: "Varicose veins: incompetence of valves (especially saphenofemoral), high venous pressure, weak vein walls/fascia. Common at perforators where superficial/deep systems connect."
+            },
+            {
+                question: "The 'saphenous branch' of the descending genicular artery accompanies:",
+                options: [
+                    "Great saphenous vein in adductor canal",
+                    "Small saphenous vein in calf",
+                    "Femoral artery in femoral triangle",
+                    "Popliteal artery behind knee"
+                ],
+                correct: 0,
+                explanation: "Saphenous branch of descending genicular artery (from femoral) accompanies great saphenous vein in adductor canal, supplying skin over medial knee/leg."
+            },
+            {
+                question: "During Trendelenburg's test for varicose veins, the tourniquet is placed:",
+                options: [
+                    "At saphenofemoral junction to test valve competence",
+                    "Around ankle to check perforator incompetence",
+                    "Mid-thigh to test great saphenous valves",
+                    "Multiple locations sequentially"
+                ],
+                correct: 3,
+                explanation: "Trendelenburg test: tourniquet at different levels (thigh, below knee) to localize incompetent valves. Patient stands after emptying veins; rapid filling indicates incompetence at that level."
+            },
+            {
+                question: "The great saphenous vein receives which tributaries near its termination?",
+                options: [
+                    "Superficial epigastric, superficial circumflex iliac, external pudendal veins",
+                    "Deep femoral and profunda veins",
+                    "Popliteal vein tributaries",
+                    "Internal pudendal veins"
+                ],
+                correct: 0,
+                explanation: "Near termination, great saphenous receives: superficial epigastric, superficial circumflex iliac, external pudendal veins. These may have incompetent valves contributing to varicose veins."
+            },
+            {
+                question: "The 'saphenous nerve' can be injured during:",
+                options: [
+                    "Harvesting great saphenous vein for CABG",
+                    "Knee surgery (medial meniscectomy)",
+                    "Femoral artery catheterization",
+                    "All of the above"
+                ],
+                correct: 3,
+                explanation: "Saphenous nerve vulnerable during: vein harvesting (CABG), medial knee surgery, femoral procedures. Injury causes numbness over medial leg/foot."
+            },
+
+            // Questions 49-60: Gluteal Region - Answer A
+            {
+                question: "Which muscle is the most superficial in the gluteal region?",
+                options: [
+                    "Gluteus maximus - largest and most superficial",
+                    "Gluteus medius - deep to maximus",
+                    "Piriformis - deep muscle",
+                    "Tensor fasciae latae - anterolateral"
+                ],
+                correct: 0,
+                explanation: "Gluteus maximus is most superficial, giving buttock contour. It extends from ilium/sacrum/coccyx to iliotibial tract and gluteal tuberosity. Chief extensor of hip."
+            },
+            {
+                question: "The sciatic nerve usually emerges:",
+                options: [
+                    "Inferior to piriformis muscle (85% of cases)",
+                    "Superior to piriformis",
+                    "Through piriformis",
+                    "Between piriformis and obturator internus"
+                ],
+                correct: 0,
+                explanation: "In 85%: sciatic nerve exits pelvis inferior to piriformis. Variations: nerve passes through piriformis (10%), superior to it, or divides early with part through/above."
+            },
+            {
+                question: "Which nerve exits the pelvis through the greater sciatic foramen ABOVE piriformis?",
+                options: [
+                    "Superior gluteal nerve (L4-S1)",
+                    "Inferior gluteal nerve (L5-S2)",
+                    "Sciatic nerve (L4-S3)",
+                    "Pudendal nerve (S2-S4)"
+                ],
+                correct: 0,
+                explanation: "Superior gluteal nerve (L4-S1) exits above piriformis to innervate gluteus medius/minimus and tensor fasciae latae. Other nerves exit below piriformis."
+            },
+            {
+                question: "The 'safe area' for intramuscular injections in gluteal region is:",
+                options: [
+                    "Upper outer quadrant to avoid sciatic nerve",
+                    "Lower inner quadrant",
+                    "Over gluteus maximus belly",
+                    "Anywhere in buttock"
+                ],
+                correct: 0,
+                explanation: "IM injections: upper outer quadrant to avoid sciatic nerve (which lies in lower medial quadrant). Draw imaginary line from PSIS to greater trochanter - injection above/medial to line."
+            },
+            {
+                question: "Which muscle is the primary abductor of the hip?",
+                options: [
+                    "Gluteus medius (and minimus) - main abductors",
+                    "Gluteus maximus - extends and laterally rotates",
+                    "Tensor fasciae latae - flexes and abducts",
+                    "Piriformis - lateral rotator"
+                ],
+                correct: 0,
+                explanation: "Gluteus medius and minimus are primary hip abductors. Essential for pelvic stability during walking (Trendelenburg sign if weak)."
+            },
+            {
+                question: "The 'piriformis syndrome' involves compression of:",
+                options: [
+                    "Sciatic nerve as it passes through/under piriformis",
+                    "Pudendal nerve in Alcock's canal",
+                    "Superior gluteal nerve above piriformis",
+                    "Inferior gluteal nerve below piriformis"
+                ],
+                correct: 0,
+                explanation: "Piriformis syndrome: sciatic nerve compressed by spastic/hypertrophied piriformis. Causes sciatica-like symptoms without disc herniation."
+            },
+            {
+                question: "Which structure exits the pelvis through the lesser sciatic foramen?",
+                options: [
+                    "Obturator internus tendon and nerve",
+                    "Piriformis muscle",
+                    "Superior gluteal vessels",
+                    "Sciatic nerve"
+                ],
+                correct: 0,
+                explanation: "Lesser sciatic foramen transmits: obturator internus tendon, nerve to obturator internus, pudendal nerve/vessels (re-entering pelvis)."
+            },
+            {
+                question: "The 'Trendelenburg sign' indicates weakness of:",
+                options: [
+                    "Gluteus medius/minimus on standing side",
+                    "Gluteus maximus on swinging side",
+                    "Quadriceps on weight-bearing side",
+                    "Hamstrings on opposite side"
+                ],
+                correct: 0,
+                explanation: "Trendelenburg sign: pelvis drops on opposite side during single-leg stance. Indicates weak hip abductors (gluteus medius/minimus) on standing side, often from superior gluteal nerve injury."
+            },
+            {
+                question: "Which artery is the main blood supply to the gluteal region?",
+                options: [
+                    "Superior gluteal artery (from internal iliac)",
+                    "Inferior gluteal artery (from internal iliac)",
+                    "Medial circumflex femoral artery",
+                    "All of the above contribute"
+                ],
+                correct: 3,
+                explanation: "Gluteal region supplied by: superior gluteal artery (largest branch of internal iliac), inferior gluteal artery, medial/lateral circumflex femoral arteries (from profunda femoris)."
+            },
+            {
+                question: "The 'sciatic nerve' in the gluteal region lies deep to:",
+                options: [
+                    "Gluteus maximus and inferior to piriformis",
+                    "Gluteus medius only",
+                    "Tensor fasciae latae",
+                    "Superficial to all muscles"
+                ],
+                correct: 0,
+                explanation: "Sciatic nerve lies deep to gluteus maximus, emerging inferior to piriformis. It descends midway between greater trochanter and ischial tuberosity."
+            },
+            {
+                question: "Which muscle laterally rotates the thigh when the hip is extended?",
+                options: [
+                    "Gluteus maximus (main lateral rotator in extension)",
+                    "Gluteus medius (anterior fibers medially rotate)",
+                    "Tensor fasciae latae (medially rotates)",
+                    "Piriformis (lateral rotator in flexion)"
+                ],
+                correct: 0,
+                explanation: "Gluteus maximus is powerful lateral rotator of extended hip. Piriformis and other short rotators laterally rotate flexed hip."
+            },
+            {
+                question: "The 'superior gluteal nerve' injury results in:",
+                options: [
+                    "Trendelenburg gait (pelvis drops on swing side)",
+                    "Inability to extend hip against resistance",
+                    "Loss of sensation over buttock",
+                    "Foot drop"
+                ],
+                correct: 0,
+                explanation: "Superior gluteal nerve (L4-S1) injury → weak gluteus medius/minimus → Trendelenburg gait. Patient lurches toward affected side during walking."
+            }
+        ];
+
+        // Initialize the quiz
+        document.addEventListener('DOMContentLoaded', function() {
+            const questionsSection = document.getElementById('questions-section');
+            const answerSection = document.getElementById('answer-section');
+            const answerBank = document.getElementById('answer-bank');
+            const submitBtn = document.getElementById('submit-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const resultsSection = document.getElementById('results-section');
+            const scoreValue = document.getElementById('score-value');
+            const attemptedValue = document.getElementById('attempted-value');
+            const passedValue = document.getElementById('passed-value');
+            const failedValue = document.getElementById('failed-value');
+            const detailedAnswers = document.getElementById('detailed-answers');
+            const shareTwitterBtn = document.getElementById('share-twitter');
+            const shareFacebookBtn = document.getElementById('share-facebook');
+            const shareWhatsappBtn = document.getElementById('share-whatsapp');
+            const shareCopyBtn = document.getElementById('share-copy');
+            const progressBar = document.getElementById('progress-bar');
+            
+            let userAnswers = Array(quizData.length).fill(null);
+            
+            // Create question elements
+            quizData.forEach((questionData, index) => {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'question';
+                
+                // Add category-specific notes
+                let categoryNote = '';
+                if (index < 12) { // Anterior thigh
+                    categoryNote = `<div class="anterior-note">Anterior Thigh: Questions 1-12 focus on femoral triangle, quadriceps, and anterior compartment muscles.</div>`;
+                } else if (index < 24) { // Medial thigh
+                    categoryNote = `<div class="medial-note">Medial Thigh: Questions 13-24 focus on adductor muscles, obturator nerve, and medial compartment anatomy.</div>`;
+                } else if (index < 36) { // Posterior thigh
+                    categoryNote = `<div class="posterior-note">Posterior Thigh: Questions 25-36 focus on hamstrings, sciatic nerve, and posterior compartment.</div>`;
+                } else if (index < 48) { // Saphenous system
+                    categoryNote = `<div class="saphenous-note">Great Saphenous System: Questions 37-48 focus on venous anatomy, clinical correlations, and surgical relevance.</div>`;
+                } else { // Gluteal region
+                    categoryNote = `<div class="gluteal-note">Gluteal Region: Questions 49-60 focus on gluteal muscles, nerves, vessels, and clinical signs.</div>`;
+                }
+                
+                questionElement.innerHTML = `
+                    <div class="question-number">${index + 1}</div>
+                    <div class="question-text">${questionData.question}</div>
+                    ${categoryNote}
+                    <div class="options">
+                        ${questionData.options.map((option, optionIndex) => `
+                            <div class="option" data-question="${index}" data-option="${optionIndex}" data-letter="${String.fromCharCode(65 + optionIndex)}">
+                                <div class="option-content">${option}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                questionsSection.appendChild(questionElement);
+                
+                // Create answer element for answer bank
+                const answerElement = document.createElement('div');
+                answerElement.className = 'answer-item';
+                const correctLetter = String.fromCharCode(65 + questionData.correct);
+                answerElement.innerHTML = `
+                    <strong>${index + 1}. ${questionData.question}</strong><br>
+                    <span class="answer-correct">Correct: ${correctLetter}. ${questionData.options[questionData.correct]}</span>
+                `;
+                answerBank.appendChild(answerElement);
+            });
+            
+            // Update progress bar
+            function updateProgress() {
+                const answered = userAnswers.filter(answer => answer !== null).length;
+                const progress = (answered / quizData.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Add event listeners to options
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const questionIndex = parseInt(this.getAttribute('data-question'));
+                    const optionIndex = parseInt(this.getAttribute('data-option'));
+                    
+                    // Remove selected class from all options in this question
+                    const questionOptions = document.querySelectorAll(`.option[data-question="${questionIndex}"]`);
+                    questionOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Store user's answer
+                    userAnswers[questionIndex] = optionIndex;
+                    
+                    // Update progress
+                    updateProgress();
+                });
+            });
+            
+            // Submit button event listener
+            submitBtn.addEventListener('click', function() {
+                let score = 0;
+                let attempted = 0;
+                let passed = 0;
+                let failed = 0;
+                
+                // Clear previous detailed answers
+                detailedAnswers.innerHTML = '';
+                
+                // Evaluate answers
+                quizData.forEach((questionData, index) => {
+                    const userAnswer = userAnswers[index];
+                    const correctAnswer = questionData.correct;
+                    const questionOptions = document.querySelectorAll(`.option[data-question="${index}"]`);
+                    
+                    if (userAnswer !== null) {
+                        attempted++;
+                        
+                        // Mark correct/incorrect answers
+                        questionOptions.forEach((option, optionIndex) => {
+                            if (optionIndex === correctAnswer) {
+                                option.classList.add('correct');
+                            } else if (optionIndex === userAnswer && userAnswer !== correctAnswer) {
+                                option.classList.add('incorrect');
+                            }
+                        });
+                        
+                        if (userAnswer === correctAnswer) {
+                            score++;
+                            passed++;
+                        } else {
+                            failed++;
+                        }
+                        
+                        // Create detailed answer element
+                        const detailedAnswer = document.createElement('div');
+                        detailedAnswer.className = 'answer-item';
+                        const userAnswerClass = userAnswer === correctAnswer ? 'answer-correct' : 'answer-incorrect';
+                        const userAnswerLetter = userAnswer !== null ? String.fromCharCode(65 + userAnswer) : '?';
+                        const userAnswerText = userAnswer !== null ? questionData.options[userAnswer] : 'Not selected';
+                        detailedAnswer.innerHTML = `
+                            <strong>${index + 1}. ${questionData.question}</strong><br>
+                            <span class="${userAnswerClass}">Your answer: ${userAnswerLetter}. ${userAnswerText}</span><br>
+                            <span class="answer-correct">Correct: ${String.fromCharCode(65 + correctAnswer)}. ${questionData.options[correctAnswer]}</span><br>
+                            <div class="clinical-note">${questionData.explanation}</div>
+                        `;
+                        detailedAnswers.appendChild(detailedAnswer);
+                    } else {
+                        // Create detailed answer for unattempted question
+                        const detailedAnswer = document.createElement('div');
+                        detailedAnswer.className = 'answer-item';
+                        detailedAnswer.innerHTML = `
+                            <strong>${index + 1}. ${questionData.question}</strong><br>
+                            <span class="answer-incorrect">Your answer: Not attempted</span><br>
+                            <span class="answer-correct">Correct: ${String.fromCharCode(65 + correctAnswer)}. ${questionData.options[correctAnswer]}</span><br>
+                            <div class="clinical-note">${questionData.explanation}</div>
+                        `;
+                        detailedAnswers.appendChild(detailedAnswer);
+                    }
+                });
+                
+                // Update score and stats
+                scoreValue.textContent = `${score}/${quizData.length}`;
+                attemptedValue.textContent = attempted;
+                passedValue.textContent = passed;
+                failedValue.textContent = failed;
+                
+                // Show results section and answer section
+                resultsSection.style.display = 'block';
+                answerSection.classList.add('visible');
+                
+                // Scroll to results
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Reset button event listener
+            resetBtn.addEventListener('click', function() {
+                userAnswers = Array(quizData.length).fill(null);
+                
+                // Clear all selections
+                document.querySelectorAll('.option').forEach(option => {
+                    option.classList.remove('selected', 'correct', 'incorrect');
+                });
+                
+                // Hide results section and answer section
+                resultsSection.style.display = 'none';
+                answerSection.classList.remove('visible');
+                
+                // Reset progress bar
+                progressBar.style.width = '0%';
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Share buttons functionality
+            shareTwitterBtn.addEventListener('click', function() {
+                const score = document.getElementById('score-value').textContent;
+                const text = `I scored ${score} on the Lower Limb Anatomy Quiz! Test your knowledge of thigh compartments, saphenous system, and gluteal region.`;
+                const url = window.location.href;
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+            });
+            
+            shareFacebookBtn.addEventListener('click', function() {
+                const url = window.location.href;
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+            });
+            
+            shareWhatsappBtn.addEventListener('click', function() {
+                const score = document.getElementById('score-value').textContent;
+                const text = `I scored ${score} on the Lower Limb Anatomy Quiz! Test your knowledge: ${window.location.href}`;
+                window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+            });
+            
+            shareCopyBtn.addEventListener('click', function() {
+                const score = document.getElementById('score-value').textContent;
+                const attempted = document.getElementById('attempted-value').textContent;
+                const passed = document.getElementById('passed-value').textContent;
+                const text = `Lower Limb Anatomy Quiz Results:
+Score: ${score}
+Questions Attempted: ${attempted}
+Questions Passed: ${passed}
+Test your knowledge of anterior/medial/posterior thigh, saphenous system, and gluteal region: ${window.location.href}`;
+                
+                navigator.clipboard.writeText(text).then(function() {
+                    alert('Results copied to clipboard!');
+                }, function() {
+                    alert('Failed to copy results. Please try again.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
